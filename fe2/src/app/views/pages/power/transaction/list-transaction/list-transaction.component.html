@@ -130,13 +130,13 @@
 				<ng-container matColumnDef="unit">
 					<mat-header-cell *matHeaderCellDef>Unit</mat-header-cell>
 					<mat-cell *matCellDef="let consumption">
-						<span >{{ consumption.pow.unt.cdunt | titlecase}}</span>
+						<span >{{ consumption.pow && consumption?.pow.unt.cdunt | titlecase}}</span>
 					</mat-cell>
 				</ng-container>
 				<ng-container matColumnDef="rate">
 					<mat-header-cell *matHeaderCellDef>Rate</mat-header-cell>
 					<mat-cell *matCellDef="let consumption">
-						<span >{{ consumption.pow.rte.rte }}</span>
+						<span >{{ consumption?.pow.rte.rte }}</span>
 					</mat-cell>
 				</ng-container>
 				<ng-container matColumnDef="strtpos">

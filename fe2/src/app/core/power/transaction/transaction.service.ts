@@ -38,7 +38,7 @@ export class PowerTransactionService {
 		for (let key in options) {
 			params.set(key, options[key])
 		}
-		return this.http.get<QueryResultsModel>(API_POWER_TRANSACTION_URL + '/list?' + params,{ headers: httpHeaders });
+		return this.http.get<QueryResultsModel>(API_POWER_TRANSACTION_URL + '/?' + params,{ headers: httpHeaders });
 	}
 
 	getListPowerTransactionUnpost(queryParams: QueryPowerTransactionModel): Observable<QueryResultsModel>{
