@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body{
+            margin: 4px;
+        }
+        pre.test {
+        border-style: groove;
+        background-color: rgb(5, 214, 5);
+        border-color: rgb(5, 214, 5);
+        width: 90%;
+        font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none
+        }
+        h2 {    
+        background-color: rgb(5, 214, 5);
+        width: 90%;
+        }
+        table, th, td {
+        border: 1px solid black;
+        }
+        .topleft {
+            position: fixed;
+            left:0;
+            top:0;
+        }
+        p.groove {
+        border-style: groove;
+        letter-spacing: 1px;
+        width: 100%;
+        height: 120px;
+        margin-top: 1px;
+        padding-bottom: 1px;
+        }
+        pre.groove {
+        border-style: groove;
+        width: 100%;
+        top: 70px;
+        font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none
+        }
+        .serif {
+        font-family: "Times New Roman", Times, serif;
+        }
+
+        .sansserif {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .monospace {
+        font-family: "Lucida Console", Courier, monospace;
+        }
+        hr.new4 {
+        border: 1px solid black;
+        }
+        pre.edward {
+        font-family: "Edwardian Script Itc", cursive, sans-serif;
+        letter-spacing: 1px;
+        width: 50%;
+        margin-top: 1px;
+        padding-bottom: 1px;
+        }
+
+
+span.cls_002{font-family:"Calibri Bold",serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_002{font-family:"Calibri Bold",serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_004{font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+pre.cls_004{font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+pre.cls_005{font-family:"Calibri",serif;font-size:12px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+    </style>
+    
+    <script type="text/javascript" src="a77abc8c-c71d-11ea-8b25-0cc47a792c0a_id_a77abc8c-c71d-11ea-8b25-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+
+</head>
+
+<body>
+    <div style="position:absolute;left:0px;top:0px">
+<img style="position:absolute;left:40px;top:41.42px" src="http://localhost:3000/Logo be management-01.png" width=60 height=60></div>
+<div style="position:absolute;left:280.48px;top:30.42px" class="cls_004"><span class="cls_004" style="text-align: center; font-size: 12pt"><b>DELIVERY ORDER</b></span></div>
+<div style="position:absolute;left:45.83px;top:85.42px" class="cls_004"><span class="cls_004"></span></div>
+<div style="position:absolute;left:470px;top:99.03px" class="cls_004"><span class="cls_004">DO Id</span></div>
+<div style="position:absolute;left:550px;top:99.03px" class="cls_004"><span class="cls_004">: <%= Ticket.do_id %></span></div>
+<div style="position:absolute;left:45.83px;top:99.03px" class="cls_004"><span class="cls_004">Jl. BSD Raya Utama No. 63</span></div>
+<div style="position:absolute;left:470px;top:113px" class="cls_004"><span class="cls_004">DO Date</span></div>
+<div style="position:absolute;left:550px;top:113px" class="cls_004"><span class="cls_004">: <%= Ticket.date_scheduled %> </span></div>
+<div style="position:absolute;left:45.83px;top:112.45px" class="cls_004"><span class="cls_004">Tangerang - Banten</span></div>
+<div style="position:absolute;left:470px;top:155.45px" class="cls_004"><span class="cls_004">Unit</span></div>
+<div style="position:absolute;left:550px;top:127.25px" class="cls_004"><span class="cls_004">: <%= Ticket.id_ticket %></span></div>
+<div style="position:absolute;left:45.83px;top:125.85px" class="cls_004"><span class="cls_004">15338</span></div>
+<div style="position:absolute;left:470px;top:140.85px" class="cls_004"><span class="cls_004">Tenant Name</span></div>
+<div style="position:absolute;left:550px;top:140.85px" class="cls_004"><span class="cls_004">: <%= Ticket.customer_id %></span></div>
+<div style="position:absolute;left:45.83px;top:139.25px" class="cls_004"><span class="cls_004">Phone: 0818 0669 1710</span></div>
+<div style="position:absolute;left:470px;top:127.25px" class="cls_004"><span class="cls_004">Ticket Id</span></div>
+<div style="position:absolute;left:550px;top:155.25px" class="cls_004"><span class="cls_004">: <%= Ticket.unit_name %></span></div>
+<div style="position:absolute;left:45.83px;top:152.65px" class="cls_004"><span class="cls_004">www.bresidence.com</span></div>
+<div style="position:absolute;left:470px;top:167.65px" class="cls_004"><span class="cls_004">Phone Number</span></div>
+<div style="position:absolute;left:550px;top:167.65px" class="cls_004"><span class="cls_004">: <%= Ticket.customer_num %></span></div>
+<div style="position:absolute;left:40px;top:183.85px;width:700px;" class="cls_004"><pre style=" font-size: 12pt" class="test">                                                          <b>Detail Information</b></pre></div>
+
+<div style="position:absolute;left:40px;top:220.85px;width:630px;" class="cls_002">
+<pre class="groove" class="cls_004">
+
+  Subject Ticket                    : <%= Ticket.subject %>
+  Category Location          : <%= Ticket.catname %>
+  Type Category                    : <%= Ticket.defect_name %>  
+  Sub Type Category          : <%= Ticket.subtype %>   
+  Description                         : <%= Ticket.description %>
+  Ticket Date                          : <%= Ticket.ticket_date %>
+  Engineer Name                 : <%= Ticket.engineer_name %>
+  Engineer Schedule         : <%= Ticket.date_scheduled %>   
+
+</div>                                     
+
+</div>
+<div style="position:absolute;left:40px;top:400px;width:700px;" class="cls_002">
+<span class="cls_004">Engineer Notes:</span>
+</div>
+<div style="position:absolute;left:40px;top:410px;width:630px;" class="cls_002">
+<pre class="groove" class="cls_004">
+
+<%= Ticket.engnr_desc %> 
+
+
+</div> 
+
+<div style="position:absolute;left:40px;top:490px;width:700px;" class="cls_002">
+<span class="cls_004">Attachment:</span>
+</div>
+
+<div style="position:absolute;left:40px;top:500px;width:630px;" class="groove">
+<pre style="font-size: 10pt !important;" class="groove" style="font-size: 12pt !important;">
+    <% var filename = Ticket.filename %>
+    <% var filename2 = Ticket.filename2 %>
+    <img src="http://localhost:3000/<%- filename %>" alt="Attachment photo" style="width:280px;height:200px;" class=margin-left>            <img src="http://localhost:3000/<%- filename2 %>" alt="Attachment photo" style="width:280px;height:200px;" class=margin-left>  
+
+    </pre>
+    </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <div style="position:absolute;left:40px;top:1100px;width:630px;" class="cls_002">
+            <pre class="cls_004" >Part Replacement:</pre>
+                        <table style="width:100%" class="w3-table-all w3-tiny">
+                            <tr class="w3-green">
+                              <th style="height:1px">No</th>
+                              <th style="height:1px">Product Name</th>
+                              <th style="height:1px">QTY</th>
+                              <th style="height:1px">UOM</th> 
+                            </tr>
+                            <tr>
+                              <td style="height:1px">1</td>
+                              <td style="height:1px"><%= Ticket.prdctname[0]%></td>
+                              <td style="height:1px"><%= Ticket.qty[0]%></td>
+                              <td style="height:1px"></td>
+                            </tr>
+                            <tr>
+                              <td style="height:1px">2</td>
+                              <td style="height:1px"><%= Ticket.prdctname[1]%></td>
+                              <td style="height:1px"><%= Ticket.qty[1]%></td>
+                              <td style="height:1px"></td>
+                            </tr>
+                            <tr>
+                              <td style="height:1px">3</td>
+                              <td style="height:1px"><%= Ticket.prdctname[2]%></td>
+                              <td style="height:1px"><%= Ticket.qty[2]%></td>
+                              <td style="height:1px"></td>
+                            </tr>
+                            <tr>
+                                <td style="height:1px">4</td>
+                                <td style="height:1px"><%= Ticket.prdctname[3]%></td>
+                                <td style="height:1px"><%= Ticket.qty[3]%></td>
+                                <td style="height:1px"></td>
+                            </tr>
+                            <tr>
+                                <td style="height:1px">5</td>
+                                <td style="height:1px"><%= Ticket.prdctname[4]%></td>
+                                <td style="height:1px"><%= Ticket.qty[4]%></td>
+                                <td style="height:1px"></td>
+                            </tr>
+                            <tr>
+                                <td style="height:1px">6</td>
+                                <td style="height:1px"><%= Ticket.prdctname[5]%></td>
+                                <td style="height:1px"><%= Ticket.qty[5]%></td>
+                                <td style="height:1px"></td>
+                            </tr>
+                          </table>
+        </div>
+<div style="position:absolute;left:40px;top:1360px;width:700px;" class="cls_002">                                                
+<pre class="cls_004" >
+Engineer Notes: 
+</div>
+<div style="position:absolute;left:40px;top:1380px;width:620px;" class="cls_002">     
+<pre class="groove" class="cls_004">
+
+<%= Ticket.engnr_desc %>
+
+</pre>
+</div> 
+<div style="position:absolute;left:40px;top:1440px;width:700px;" class="cls_002">                                                
+<pre class="cls_005" ><b>
+Engineer Signature</b> 
+</div>
+<div style="position:absolute;left:35px;top:1470px;width:700px;" class="cls_004">
+<pre style="font-size: 45pt !important;" class="edward" ><%= Ticket.engfirstname %></pre>
+</div>
+<div style="position:absolute;left:580px;top:950px;width:700px;" class="cls_004">
+<pre class="cls_005">Page 1 of 2</pre>
+</div>
+<div style="position:absolute;left:580px;top:2000px;width:700px;" class="cls_004">
+<pre class="cls_005" >Page 2 of 2</pre>
+</div>
+</body>
+</html>

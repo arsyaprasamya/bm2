@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <style>
+        body{
+            margin: 4px;
+        }
+        img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        table, th, td {
+        border: 1px solid black;
+        }
+        h2 {    
+        background-color: green;
+        }
+        body{
+            margin: 4px;
+        }
+        img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        table, th, td {
+        border: 1px solid black;
+        }
+        .topleft {
+            position: fixed;
+            left:0;
+            top:0;
+        }
+        p.groove {border-style: groove;}
+        .serif {
+        font-family: "Times New Roman", Times, serif;
+        }
+
+        .sansserif {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .monospace {
+        font-family: "Lucida Console", Courier, monospace;
+        }
+        hr.new4 {
+        border: 1px solid black;
+        }
+        pre.edward {
+        font-family: "Edwardian Script Itc", cursive, sans-serif;
+        letter-spacing: 1px;
+        width: 50%;
+        margin-top: 1px;
+        padding-bottom: 1px;
+        }
+        
+    </style>
+    
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="col-xs-12">
+        <div>
+            <p style="font-size: 10pt !important;" style="font-size: 12pt !important;"></p>
+            <% var filename = Ticket.filename %>
+            <img src="http://localhost:3000/<%- filename %>" alt="Attachment photo" class="center" style="width:300px;height:200px;">
+        </div>
+</body>
+</html>

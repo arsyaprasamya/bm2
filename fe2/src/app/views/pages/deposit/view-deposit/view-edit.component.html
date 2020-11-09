@@ -1,0 +1,120 @@
+<div class="kt-portlet"
+	[ngClass]="{ 'kt-portlet--body-progress kt-portlet--body-progress-overlay' : viewLoading }">
+	<div class="kt-portlet__head kt-portlet__head__custom">
+		<div class="kt-portlet__head-label">
+			<h3 class="kt-portlet__head-title">{{getTitle()}}</h3>
+		</div>
+	</div>
+	<form class="kt-form" [formGroup]="depositForm">
+		<div class="kt-portlet__body">
+			<div class="kt-portlet__body-progress">
+				<mat-spinner [diameter]="20"></mat-spinner>
+			</div>
+			<kt-alert *ngIf="hasFormErrors" type="warn" [duration]="30000" [showCloseButton]="true" (close)="onAlertClose($event)">
+				Oh snap! Change a few things up and try submitting again.
+			</kt-alert>
+			<div class="kt-form__section kt-form__section--first">
+				<div class="form-group kt-form__group row">
+					<div class="col-lg-4 kt-margin-bottom-20-mobile">
+						<mat-form-field class="mat-form-field-fluid">
+							<input matInput placeholder="Receive No" formControlName="receiveno"/>
+						</mat-form-field>
+					</div>
+					<div class="col-lg-4 kt-margin-bottom-20-mobile">
+						<mat-form-field>
+						<input matInput [matDatepicker]="crtdt" placeholder="Deposit In Date" formControlName="invoicedte"/>
+						<mat-datepicker-toggle matSuffix [for]="crtdt"></mat-datepicker-toggle>
+						<mat-datepicker #crtdt></mat-datepicker>
+						</mat-form-field>
+					</div>
+					<div class="col-lg-4 kt-margin-bottom-20-mobile">
+						<mat-form-field>
+						<input matInput [matDatepicker]="upddt" placeholder="Deposit Out Date" formControlName="invoicedteout"/>
+						<mat-datepicker-toggle matSuffix [for]="upddt"></mat-datepicker-toggle>
+						<mat-datepicker #upddt></mat-datepicker>
+						</mat-form-field>
+					</div>
+				</div>
+				<div class="form-group kt-form__group row">
+					<div class="col-lg-6 kt-margin-bottom-20-mobile">
+						<mat-form-field class="mat-form-field-fluid">
+							<mat-select placeholder="Select Unit" formControlName="unit">
+								<mat-option *ngFor="let item of ownResult" [value]="item._id">
+									{{item.unit.cdunt}}
+								</mat-option>
+							</mat-select> 
+						</mat-form-field>
+					</div>
+					<div class="col-lg-6 kt-margin-bottom-20-mobile">
+							<mat-form-field class="mat-form-field-fluid">
+								<input matInput placeholder="Tenant Name" formControlName="custname"/>
+								<mat-error>deposit code is
+									<strong>required</strong>
+								</mat-error>
+							</mat-form-field>
+					</div>
+				</div>
+				<div class="form-group kt-form__group row">
+					<div class="col-lg-4 kt-margin-bottom-20-mobile">
+						<mat-form-field class="mat-form-field-fluid">
+							<input matInput placeholder="Payment Type" formControlName="pymnttype"/>
+						</mat-form-field>
+					</div>
+				</div>
+				<div class="form-group kt-form__group row">
+					<div class="col-lg-4 kt-margin-bottom-20-mobile">
+						<mat-form-field class="mat-form-field-fluid">
+							<input matInput placeholder="Deposit In" formControlName="dpstin" (change)="changeDeposit()"
+							type="number" 
+							onkeydown="javascript: return event.keyCode === 8 ||
+							event.keyCode === 46 ? true : !isNaN(Number(event.key))"/>
+							<span matPrefix>Rp&nbsp;</span>
+						</mat-form-field>
+					</div>
+					<div class="col-lg-4 kt-margin-bottom-20-mobile">
+						<mat-form-field class="mat-form-field-fluid">
+							<input matInput placeholder="Deposit Out" formControlName="dpstout" (change)="changeDeposit()"
+							type="number" 
+							onkeydown="javascript: return event.keyCode === 8 ||
+							event.keyCode === 46 ? true : !isNaN(Number(event.key))"/>
+							<span matPrefix>Rp&nbsp;</span>
+							<mat-error>Deposit In is
+								<strong>required</strong>
+							</mat-error>
+						</mat-form-field>
+					</div>
+					<div class="col-lg-4 kt-margin-bottom-20-mobile">
+						<mat-form-field class="mat-form-field-fluid">
+							<input matInput placeholder="Total" formControlName="total"/>
+							<span matPrefix>Rp&nbsp;</span>
+						</mat-form-field>
+					</div>
+					
+				</div>
+				<div class="form-group kt-form__group row">
+				<div class="col-lg-6 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid">
+						<textarea matInput placeholder="Description" rows="3" formControlName="desc"></textarea>
+					</mat-form-field>
+				</div>
+				<div class="col-lg-6 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid">
+						<textarea matInput placeholder="Description" rows="3" formControlName="descout"></textarea>
+					</mat-form-field>
+				</div>
+				</div>
+			</div>
+			<div class="kt-portlet__foot kt-portlet__no-border kt-portlet__foot--fit">
+				<div class="kt-form__actions kt-form__actions--solid">
+					<div class="row text-right">
+						<div class="col-lg-12">
+							<button type="button" mat-raised-button [mat-dialog-close]="data.animal" cdkFocusInitial matTooltip="Cancel changes">
+								Cancel
+							</button>&nbsp;
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

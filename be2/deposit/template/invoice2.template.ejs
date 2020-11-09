@@ -1,0 +1,129 @@
+<html>
+<head>
+<title></title>
+<style type="text/css">
+
+body { font-family: Arial; font-size: 18.9px }
+.pos { position: absolute; z-index: 0; left: 0px; top: 0px }
+
+span.test {
+  border-style: groove;
+ 
+  border-color: rgb(24, 26, 24);
+  width: 5px;
+ 
+}
+p.edward {
+        font-family: "Edwardian Script Itc", cursive, sans-serif;
+        letter-spacing: 1px;
+        width: 100%;
+        margin-top: 1px;
+        padding-bottom: 1px;
+        }
+</style>
+</head>
+<body>
+<nobr><nowrap>
+<div class="pos" id="_0:0" style="top:0">
+  <img style="position:absolute;left:40px;top:20px" src="http://localhost:3000/be.png" width=120 height=120></div>
+<img name="_1100:850" src="page_001.jpg" height="500" width="750"  usemap="#Map"></div>
+<div class="pos" id="_332:82" style="top:82;left:332">
+<span id="_21.8" style="font-weight:bold; font-family:Arial; font-size:21.8px; color:#000000">
+KWITANSI</span>
+</div>
+<div class="pos" id="_510:118" style="top:118;left:510">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+Tanggal : <%= moment(Inv.invoicedteout).format('DD / MM / YYYY') %> %></span>
+</div>
+<div class="pos" id="_37:143" style="top:143;left:37">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+No. Penerimaan</span>
+</div>
+<div class="pos" id="_192:144" style="top:144;left:192">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+: </span>
+</div>
+<div class="pos" id="_210:147" style="top:145;left:210">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+<%= Inv.receiveno %></span>
+</div>
+<div class="pos" id="_37:175" style="top:175;left:37">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+Nama </span>
+</div>
+<div class="pos" id="_191:173" style="top:173;left:191">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+:</span>
+</div>
+<div class="pos" id="_208:177" style="top:174;left:208">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+<%= Inv.custname %> </span>
+</div>
+<div class="pos" id="_37:202" style="top:202;left:37">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+Unit</span>
+</div>
+<div class="pos" id="_208:177" style="top:203;left:208">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+  <%= Inv.unit%>
+</div>
+<div class="pos" id="_192:202" style="top:202;left:192">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+:</span>
+</div>
+<div class="pos" id="_37:232" style="top:232;left:37">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+Terbilang</span>
+</div>
+<div class="pos" id="_191:230" style="top:230;left:191">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+:</span>
+</div>
+<div class="pos" id="_209:234" style="top:231;left:209">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+## <%= terbilang(Inv.total) %> ##</span>
+</div>
+<div class="pos" id="_38:273" style="top:260;left:38">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+Keterangan</span>
+</div>
+<div class="pos" id="_191:267" style="top:260;left:191">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+:</span>
+</div>
+<div class="pos" id="_210:271" style="top:261;left:210">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+<%= Inv.descout %></span>
+</div>
+<div class="pos" id="_37:329" style="top:290;left:37">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+Jenis Pembayaran</span>
+</div>
+<div class="pos" id="_191:328" style="top:290;left:191">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+:</span>
+</div>
+<div class="pos" id="_211:329" style="top:290;left:211">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+<%= Inv.pymnttype %></span>
+</div>
+<div class="pos" id="_211:329" style="top:350;left:60">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+Nominal</span>
+</div>
+<div class="pos" id="_587:356" style="top:356;left:587">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+Authorized Signature</span>
+</div>
+
+<div class="pos" id="_34:372" style="top:372;left:34">
+<span id="_13.6" class="test" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+Rp.  <%= Math.max(0, Inv.total).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></span>
+</div>
+<div class="pos" id="_631:473" style="top:473;left:631">
+<span id="_13.6" style="font-weight:bold; font-family:Arial; font-size:13.6px; color:#000000">
+ADMIN</span>
+</div>
+</nowrap></nobr>
+</body>
+</html>

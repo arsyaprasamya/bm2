@@ -1,0 +1,199 @@
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+<style type="text/css">
+
+h2 {    
+        background-color: rgb(5, 214, 5);
+        width: 100%;
+        }
+pre.test {
+  border-style: groove;
+  background-color: rgb(5, 214, 5);
+  border-color: rgb(5, 214, 5);
+  width: 90%;
+  font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none
+}
+pre.groove {
+    border-style: groove;
+    width: 90%;
+    top: 70px;
+    font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none
+
+}
+p.groove {
+    border-style: groove;
+    width: 91%;
+    top: 70px;
+    font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none
+
+}
+.serif {
+font-family: "Times New Roman", Times, serif;
+}
+
+.p {
+    border-bottom: 1px solid black;
+    line-height: 2000px;
+    top: 700px;
+}
+table, th, td {
+        border: 1px solid black;
+        }
+
+span.cls_002{font-family:"Calibri Bold",serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_002{font-family:"Calibri Bold",serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_004{font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+pre.cls_004{font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+
+</style>
+
+<script type="text/javascript" src="a77abc8c-c71d-11ea-8b25-0cc47a792c0a_id_a77abc8c-c71d-11ea-8b25-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+
+<div style="position:absolute;left:0px;top:0px"><img src="http://localhost:3000/be.png"  style="position:absolute;left:40px;top:41.42px" width=120 height=120></div>
+<div style="position:absolute;left:86%;top:30.42px" class="cls_004"><span class="cls_004" style="font-size: 20pt"><b>INVOICE</b></span></div>
+<div style="position:absolute;left:86.3%;top:6%" class="cls_004"><span class="cls_004" style="font-size: 10pt; font-weight: 500;"><b>Be Management</b></span></div>
+<div style="position:absolute;left:82%;top:99.03px" class="cls_004"><span class="cls_004">Jl. BSD Raya Utama No. 63</span></div>
+<div style="position:absolute;left:86.5%;top:112.45px" class="cls_004"><span class="cls_004">Tangerang - Banten</span></div>
+<div style="position:absolute;left:95.5%;top:125.85px" class="cls_004"><span class="cls_004">15338</span></div>
+<div style="position:absolute;left:83.5%;top:139.25px" class="cls_004"><span>Phone: 0818 0669 1710</span></div>
+<div style="position:absolute;left:85%;top:152.65px" class="cls_004"><span class="cls_004">www.bresidence.com</span></div>
+
+
+<p style="position:relative;left:30.83px;top:170.65px" class="p"></p>
+<div style="position:absolute;left:5%;top:180px" class="cls_004"><span class="cls_004" style="font-weight: bold;font-size: medium;">Bill To</span></div>
+
+
+<div style="position:absolute;left:5%;top:205px" class="cls_004"><span class="cls_004" style="font-weight: bold;">Bapak / Ibu <%= billing.billed_to%></span></div>
+<div style="position:absolute;left:5%;top:229px" class="cls_004"><span class="cls_004">Unit: <%= billing.unit2%></div>
+
+<div style="position:absolute;left:500px;top:205px" class="cls_004"><span class="cls_004">Invoice No: <%= billing.billing_number %></div>   
+<div style="position:absolute;left:500px;top:217px" class="cls_004"><span class="cls_004">Invoice Date: <%= moment(billing.billing_date).format('DD / MM / YYYY') %></span></div>
+<div style="position:absolute;left:500px;top:229px" class="cls_004"><span class="cls_004">Payment Due: <%= moment(billing.due_date).format('DD / MM / YYYY') %> </span></div>
+
+<div style="position:absolute;left:5%;top:300px;width:640px;" class="cls_004">
+                        <table style="width:100%" class="w3-table-all w3-tiny">
+                            <tr class="w3-green">                              
+                              <th width="55%" >Description</th>
+                              <th width="15%">Usage</th>
+                              <th width="15%">Price</th>
+                              <th width="15%">Amount</th>
+                            </tr>
+                            <tr>
+                              <td>
+                                <p style="font-size: small;font-weight: bold; font-family: Calibri;margin-top: 5px;" >Electricity Consumption</p>
+                                <p style="margin-top: -5px;font-family: Calibri; font-size: 11.1px;">Pemakaian (<%= detail.electricity.strtpos / 10 %> kWh - <%= detail.electricity.endpos /10 %> kWh )</p>
+                                <p style="margin-top: -5px;font-family: Calibri; font-size: 11.1px;">PJU ( <%= detail.electricity.pow.rte.ppju%> % )</p>
+                                <p style="margin-top: -5px;font-family: Calibri; font-size: 11.1px;">Service Charge ( <%= detail.electricity.pow.rte.srvc%> % )</p>
+                                <p style="margin-top: -5px;font-family: Calibri; font-size: 11.1px;">Loss ( <%= detail.electricity.loss%> % )</p>
+                                
+                              </td>
+                              <td>&nbsp;
+                              <% var endpost = detail.electricity.endpos / 10%>
+                              <% var strtpost = detail.electricity.strtpos  / 10%>
+                              <% var kwh = endpost - strtpost %>
+                              <% var kwh = kwh %>
+                              <p style="margin-top: 15px;font-family: Calibri;font-size: 11.1px"><%- kwh %> KWh</p>
+                              </td>
+                              <td>&nbsp; 
+                              <% var rate = detail.electricity.pow.rte.rte %>
+                              <p style="margin-top: 14px;font-family: Calibri;font-size: 11.1px">Rp. <%= Math.max(0, rate).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></p>
+                              <p style="margin-top: 65px;font-family: Calibri;font-size: 11.1px"><b>Total</b></p>
+                              </td>
+                              <td>
+                                  <% var amount = detail.electricity.billamnt %>
+                                  <% var amountppju = detail.electricity.pow.rte.ppju  * detail.electricity.billamnt / 100  %>
+                                  <% var amountforsc = detail.electricity.billamnt + amountppju %>
+                                  <% var amountsc = Math.round(detail.electricity.pow.rte.srvc  * amountforsc / 100)  %>
+                                  <% var amountaftersc = amountsc + amountforsc  %>
+                                  <% var amountloss = detail.electricity.pow.loss  * amountaftersc / 100  %>
+                                  <% var amountlosso = detail.electricity.loss  %>
+                                  <% var amountElect = amountsc + amountppju + amount %>
+                                  <p style="margin-top: 25px;font-family: Calibri;font-size: 11.1px">Rp. <%= Math.max(0,  amount).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %> </p>
+                                  <p style="margin-top: -5px;font-family: Calibri;font-size: 11.1px">Rp. <%= Math.max(0,  amountppju ).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></p>
+                                  <p style="margin-top: -5px;font-family: Calibri;font-size: 11.1px">Rp. <%= Math.max(0,  amountsc ).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></p>
+                                  <p style="margin-top: -5px;font-family: Calibri;font-size: 11.1px">Rp. <%= Math.max(0,  amountlosso ).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></p>
+                                  <p style="margin-top: -2px;font-family: Calibri;font-size: 11.1px"></p><b>Rp. <%= Math.max(0,  amountElect ).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.')%>
+                              </td>
+                            </tr>
+                            <tr>
+                                <% if("water" in billing.billing)  %>
+                                
+                                <td>
+                                <p style="font-size: small;font-weight: bold; font-family: Calibri;margin-top: 5px;" >Water Consumption</p>
+                                <p style="margin-top: -5px;font-family: Calibri; font-size: 11.1px;">Total Penggunaan (<%= detail.water.strtpos / 100 %> m<sup>3</sup> - <%= detail.water.endpos / 100 %> m<sup>3</sup> )</p>
+                                <p style="margin-top: -5px;font-family: Calibri; font-size: 11.1px;">Administrasi </p>
+                                <p style="margin-top: -5px;font-family: Calibri; font-size: 11.1px;">Pemeliharaan </p>
+                                <p style="margin-top: -5px;font-family: Calibri; font-size: 11.1px;">Air Kotor ( <%= detail.water.air_kotor%> % )</p>
+                                </td>
+                                <td>&nbsp;  
+                                  <% var endpost = detail.water.endpos / 100 %>
+                                  <% var strtpost = detail.water.strtpos / 100 %>
+                                  <% var m3 = endpost - strtpost%>
+                                  <% var m3 = m3 %>
+                                  <p style="margin-top: 15px;font-family: Calibri;font-size: 11.1px"><%= Math.max(0, m3).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %> m<sup>3</sup></p>
+                                </td>
+                                <td>&nbsp; 
+                                  <% var ratew = detail.water.wat.rte.rte %>
+                                  <p style="margin-top: 14px;font-family: Calibri;font-size: 11.1px">Rp. <%= Math.max(0, ratew).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></p>
+                                  <p style="margin-top: 65px;font-family: Calibri;font-size: 11.1px"><b>Total</b></p>
+                                </td>
+                                <td>&nbsp;
+                                    <% var amountW = detail.water.billamnt %>
+                                    <% var amountadmin = detail.water.wat.rte.administrasi%>
+                                    <% var amountpeml = detail.water.wat.rte.pemeliharaan%>
+                                    <% var amountairkotor = detail.water.air_kotor%>
+                                    <% var amountWater = amountW + amountadmin + amountpeml %>
+                                  <p style="margin-top: 15px;font-family: Calibri;font-size: 11.1px">Rp. <%= Math.max(0,  amountW).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %> </p>
+                                  <p style="margin-top: -5px;font-family: Calibri;font-size: 11.1px">Rp. <%= Math.max(0,  amountadmin ).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></p>
+                                  <p style="margin-top: -5px;font-family: Calibri;font-size: 11.1px">Rp. <%= Math.max(0,  amountpeml ).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></p>
+                                  <p style="margin-top: -5px;font-family: Calibri;font-size: 11.1px">Rp. <%= Math.max(0,  amountairkotor ).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></p>
+                                  <p style="margin-top: -5px;font-family: Calibri;font-size: 11.1px">Rp. <%- Math.max(0, amountWater).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></p>
+                                </td>
+                            </tr>
+                            <tr>  
+                                <td><p style="font-family: Calibri;font-size: 11.1px;;">IPL</p></td>
+                                <td>
+                                  <% var amountIplonly = billing.billing.ipl.amountipl %>
+                                  <p>Rp. <%= Math.max(0, amountIplonly).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></p> 
+                                </td>
+                                <td>                                      
+                                </td>
+                                   
+                                <td>
+                                  <p> 
+                                    <% var amountIplonly = billing.billing.ipl.amountipl %>
+                                    <p>Rp. <%= Math.max(0, amountIplonly).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></p> 
+                                  </p>                                     
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Grand Total</b></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <% gt = amountIplonly + amountWater + amountElect  %>
+                                <td><b>Rp. <%= Math.max(0, gt).toFixed(0).replace(/(?=(?:\d{3})+$)(?!^)/g, '.') %></b> </td>
+                            </tr>
+              </table>
+        </div>
+
+<!-- 
+<div style="position:absolute;left:37px;top:680px" class="cls_004"><span class="cls_002">Terbilang: <%= terbilang(gt) %> </span></div> -->
+<div style="position:absolute;left:37px;top:710px" class="cls_004"><span class="cls_004">Hormat Kami, </span></div>   
+<div style="position:absolute;left:37px;top:750px" class="cls_004"><span class="cls_004">Keuangan AR </span></div>     
+
+<div style="position:absolute;left:37px;top:780px" class="cls_004"><span class="cls_004">Saat pembayaran ke kasir kami,mohon tagihan ini DIBAWA </span></div>
+<div style="position:absolute;left:37px;top:800px" class="cls_004"><span class="cls_004">Pembayaran dengan Cek/Bilyet/Transfer,atas nama <%= billing.billed_to.cstrmrnm %> dengan No. Virtual Account Bank BNI </span></div>
+<div style="position:absolute;left:37px;top:820px" class="cls_004"><span class="cls_004">Bukti Transfer mohon di fax ke 022-87830817, Tlp : 08112289893</span></div>
+<div style="position:absolute;left:37px;top:870px" class="cls_004"><span class="cls_004">Pembayaran melebihi jatuh tempo akan di kenakan denda keterlambatan</span></div>
+
+
+</div>
+</body>
+</html>

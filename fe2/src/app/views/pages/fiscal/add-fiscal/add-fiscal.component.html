@@ -1,0 +1,80 @@
+<kt-portlet>
+	<kt-portlet-header [title]="getComponentTitle()" [class]="'kt-portlet__head--lg'" [viewLoading$]="loading$">
+		<ng-container ktPortletTools>
+			<a [routerLink]="['/fiscal']" class="btn btn-secondary kt-margin-r-10" mat-raised-button >
+				<i class="la la-arrow-left"></i>
+				<span class="kt-hidden-mobile">Back</span>
+			</a>
+			<a href="javascript:;" class="kt-margin-r-10" (click)="reset()" [disabled]="selectedTab !== 0" mat-raised-button>
+				<i class="la la-cog"></i>
+				<span class="kt-hidden-mobile">Reset</span>
+			</a>
+			<a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSubmit(false)" mat-raised-button >
+				<span class="kt-hidden-mobile">Save</span>
+			</a>
+		</ng-container>
+	</kt-portlet-header>
+
+	<kt-portlet-body>
+		<mat-tab-group [(selectedIndex)]="selectedTab">
+			<mat-tab>
+				<ng-template mat-tab-label>
+					<i class="mat-tab-label-icon fa fa-user"></i>
+					Fiscal Info
+				</ng-template>
+				<ng-template matTabContent>
+					<!--begin::Form-->
+					<div *ngIf="fiscal">
+						<form [formGroup]="fiscalForm" class="kt-form kt-form--group-seperator-dashed">
+							<kt-alert *ngIf="hasFormErrors" type="warn" [showCloseButton]="true" [duration]="10000" (close)="onAlertClose($event)">
+								Oh snap! Change a few things up and try submitting again.
+							</kt-alert>
+							<div class="kt-form__section kt-form__section--first">
+								<div class="form-group kt-form__group row">
+									<div class="col-lg-3 kt-margin-bottom-20-mobile">
+										<mat-form-field class="mat-form-field-fluid">
+											<input matInput placeholder="Fiscal Name" formControlName="fiscalName" />
+											<mat-error>Fiscal Name is
+												<strong>required</strong>
+											</mat-error>
+										</mat-form-field>
+									</div>
+									
+									<div class="col-lg-3 kt-margin-bottom-20-mobile">
+										<mat-form-field class="mat-form-field-fluid">
+											<mat-select placeholder="Select Fiscal Dept Method " formControlName="fiscalDepMethod" (change)="perhitungan()" >
+												<mat-option value="Non Depreciable">Non Depreciable</mat-option>
+												<mat-option value="Straight Line Method">Straight Line Method</mat-option>
+												<!-- <mat-option value="Sum of Year Digit Method">Sum of Year Digit Method</mat-option> -->
+												<mat-option value="Double Declining Method">Double Declining Method</mat-option>
+											</mat-select>
+										</mat-form-field>
+									</div>
+									
+									<div class="col-lg-3 kt-margin-bottom-20-mobile">
+										<mat-form-field class="mat-form-field-fluid">
+											<input matInput placeholder="Fiscal Life (year)" formControlName="fiscalLife" type="number" (change)="perhitungan()" />
+											<mat-error>Fiscal Life is
+												<strong>required</strong>
+											</mat-error>
+										</mat-form-field>
+									</div>
+									<div class="col-lg-3 kt-margin-bottom-20-mobile">
+										<mat-form-field class="mat-form-field-fluid">
+											<input matInput placeholder="Fiscal Dept Rate (%)" formControlName="fiscalDepRate"/>
+											<mat-error>Fiscal Dept Rate is
+												<strong>required</strong>
+											</mat-error>
+										</mat-form-field>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!--end::Form-->
+				</ng-template>
+			</mat-tab>
+		</mat-tab-group>
+	</kt-portlet-body>
+</kt-portlet>
+

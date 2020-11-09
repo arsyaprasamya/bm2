@@ -1,0 +1,18 @@
+.form-image-container {
+  width: 100%;
+
+  img {
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
+  
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  .no-image {
+    display: block;
+    text-align: center;
+  }
+}
