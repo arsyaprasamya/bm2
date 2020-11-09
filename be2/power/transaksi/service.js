@@ -4,15 +4,27 @@
  *
  */
 const TransaksiPower = require('./model').TransaksiPower;
+const { firstDay, lastDay } = require("../../utils/date");
 
 module.exports = {
     addTransaksi: async function(transaksi){
         try {
-            const newTransaksi = await new TransaksiPower(transaksi).save();
-            if(newTransaksi){
-                return newTransaksi;
-            }else{
-                return false;
+
+            const data = await TransaksiPower.findOne({
+                            pow: transaksi.pow,
+                            powname: transaksi.powname,
+                            billmnt: { $gt: firstDay(), $lte: lastDay() }
+                        });
+
+            if (data == null ) {
+                const newTransaksi = await new TransaksiPower(transaksi).save();
+                if(newTransaksi){
+                    return newTransaksi;
+                }else{
+                    return false;
+                }
+            } else {
+                return data;
             }
         }catch (e) {
             console.log(e);
