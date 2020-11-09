@@ -1,0 +1,25 @@
+version: '3'
+services:
+  nodejs-server:
+    build:
+      context: ./be2
+      network: host
+    ports:
+      - "3000:3000"
+    container_name: node-api
+    volumes:
+       - ./be2:/usr/src/app/api
+       - /usr/src/app/api/node_modules
+    network_mode: "host"
+  angular-ui:
+    build:
+      context: ./fe2
+      dockerfile: Dockerfile
+      network: host
+    ports:
+      - "4200:4200"
+    container_name: angular-ui
+    volumes:
+       - ./fe2:/usr/src/app/app-ui
+       - /usr/src/app/app-ui/node_modules
+    network_mode: "host"
