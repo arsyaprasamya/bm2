@@ -4,15 +4,26 @@
  *
  */
 const TransaksiWater = require('./model').TransaksiWater;
+const { firstDay, lastDay } = require("../../utils/date");
 
 module.exports = {
     addTransaksi: async function(transaksi){
         try {
-            const newTransaksi = await new TransaksiWater(transaksi).save();
-            if(newTransaksi){
-                return newTransaksi;
-            }else{
-                return false;
+            const data = await TransaksiWater.findOne({
+                            wat: transaksi.wat,
+                            watname: transaksi.watname,
+                            billmnt: { $gt: firstDay(), $lte: lastDay() }
+                        });
+
+            if (data == null ) {
+                const newTransaksi = await new TransaksiWater(transaksi).save();
+                if(newTransaksi){
+                    return newTransaksi;
+                }else{
+                    return false;
+                }
+            } else {
+                return data;
             }
         }catch (e) {
             console.log(e);
