@@ -9,11 +9,13 @@ const { firstDay, lastDay } = require("../../utils/date");
 module.exports = {
     addTransaksi: async function(transaksi){
         try {
-
             const data = await TransaksiPower.findOne({
                             pow: transaksi.pow,
                             powname: transaksi.powname,
-                            billmnt: { $gt: firstDay(), $lte: lastDay() }
+                            billmnt: {
+                                $gt: firstDay(transaksi.billmnt),
+                                $lte: lastDay(transaksi.billmnt)
+                            }
                         });
 
             if (data == null ) {

@@ -12,7 +12,10 @@ module.exports = {
             const data = await TransaksiWater.findOne({
                             wat: transaksi.wat,
                             watname: transaksi.watname,
-                            billmnt: { $gt: firstDay(), $lte: lastDay() }
+                            billmnt: {
+                                $gt: firstDay(transaksi.billmnt),
+                                $lte: lastDay(transaksi.billmnt)
+                            }
                         });
 
             if (data == null ) {
